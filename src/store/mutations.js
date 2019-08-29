@@ -6,8 +6,8 @@ const updateTotal = (state, value) => {
   state.selectedTable.total = value;
 };
 
-const updateTotalPayed = (state, value) => {
-  state.selectedTable.totalPayed = value;
+const updateTotalPaid = (state, value) => {
+  state.selectedTable.totalPaid = value;
 };
 
 const updateMissingPayment = (state, value) => {
@@ -26,7 +26,7 @@ const updatePayments = (state, value) => {
 export default {
   updateSelectedTable,
   updateTotal,
-  updateTotalPayed,
+  updateTotalPaid,
   updateMissingPayment,
   updatePayments,
 };

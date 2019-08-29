@@ -6,7 +6,7 @@ export default {
       orders: [
         {
           name: 'Chicken',
-          price: 20,
+          price: 40,
         },
         {
           name: 'Coke',
@@ -17,6 +17,118 @@ export default {
     },
     {
       table: '1',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '2',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '3',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '4',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '5',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '6',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '7',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '8',
+      orders: [
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+      ],
+      payments: [],
+    },
+    {
+      table: '9',
       orders: [
         {
           name: 'Beef',

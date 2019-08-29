@@ -1,78 +1,55 @@
 <template>
   <div>
-    <h1>Select the table</h1>
-    <button v-for="item in tables"
-            :key="item.table"
-            @click="checkTable(item)">
-      {{ item.table }}
-    </button>
-    <div>
-      <p>Total: {{ selectedTable.total }}</p>
-      <p>Already Payed: {{ selectedTable.totalPayed }}</p>
-      <p>Missing payment: {{ selectedTable.missingPayment }}</p>
+    <div class="container">
+      <div v-for="item in tables"
+           :key="item.table"
+           @click="checkTable(item)"
+           class="tables">
+        {{ item.table }}
+      </div>
     </div>
-    <div>
-      <p>
-        Orders
-      </p>
-      <ul>
-        <li v-for="order in selectedTable.orders" :key="order.index">
-          {{ order.name }}: {{ order.price }}
-        </li>
-      </ul>
-    </div>
-    <div>
-      <p>
-        Payments
-      </p>
-      <ul>
-        <li v-for="payment in selectedTable.payments" :key="payment.index">
-          {{ payment }}
-        </li>
-      </ul>
-    </div>
-    <div>
-      <p>
-        <label for="addpayment">Add a payment</label>
-        <input type="number" v-model="paying">
-        <button @click="addPayment">Register</button>
-      </p>
-    </div>
+    <TableInfo v-if="Object.keys(selectedTable).length !== 0 " />
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
 
+import TableInfo from './TableInfo.vue';
+
 export default {
-  data() {
-    return {
-      paying: '',
-    };
+  components: {
+    TableInfo,
   },
   computed: {
     ...mapState(['tables', 'selectedTable']),
   },
   methods: {
-    ...mapActions(['selectTable', 'sumBill', 'getTotalPayed', 'getMissingPayment', 'registerPayment']),
+    ...mapActions(['selectTable', 'sumBill', 'getTotalPaid', 'getMissingPayment', 'registerPayment']),
     checkTable(item) {
       this.selectTable(item);
-      this.getTotalPayed();
+      this.getTotalPaid();
       this.sumBill();
       this.getMissingPayment();
-    },
-    addPayment() {
-      this.registerPayment(this.paying);
-      this.getTotalPayed();
-      this.sumBill();
-      this.getMissingPayment();
-      this.paying = '';
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import '@/assets/styles/general.scss';
 
+  .tables{
+    flex-basis: 100px;
+    padding: 20px;
+    text-align: center;
+    margin: 5px;
+    font-size: 24px;
+    background : linear-gradient(135deg,$pink, $purple);
+    border: 1px solid black;
+    cursor: pointer;
+    &:hover {
+      background:linear-gradient(135deg, $purple, $pink);
+    }
+  }
 </style>

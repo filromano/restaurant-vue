@@ -14,16 +14,16 @@ const sumBill = ({ state, commit }) => {
   commit('updateTotal', result);
 };
 
-const getTotalPayed = ({ state, commit }) => {
+const getTotalPaid = ({ state, commit }) => {
   let result = 0;
   state.selectedTable.payments.forEach((element) => {
     result += element;
   });
-  commit('updateTotalPayed', result);
+  commit('updateTotalPaid', result);
 };
 
 const getMissingPayment = ({ state, commit }) => {
-  const result = state.selectedTable.total - state.selectedTable.totalPayed;
+  const result = state.selectedTable.total - state.selectedTable.totalPaid;
   commit('updateMissingPayment', result);
 };
 
@@ -35,7 +35,7 @@ const registerPayment = ({ commit }, value) => {
 export default {
   selectTable,
   sumBill,
-  getTotalPayed,
+  getTotalPaid,
   getMissingPayment,
   registerPayment,
 };
