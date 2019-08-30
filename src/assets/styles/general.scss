@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
 $pink: #bc4cf7;
 $lightpink: #ff7ca6;
 $purple: #7873ee;
 $green: #3ab0ae;
+
+$desktop-breakpoint: 1080px;
 
 .container {
   display: flex;

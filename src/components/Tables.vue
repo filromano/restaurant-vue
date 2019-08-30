@@ -8,21 +8,15 @@
         {{ item.table }}
       </div>
     </div>
-    <TableInfo v-if="Object.keys(selectedTable).length !== 0 " />
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
 
-import TableInfo from './TableInfo.vue';
-
 export default {
-  components: {
-    TableInfo,
-  },
   computed: {
-    ...mapState(['tables', 'selectedTable']),
+    ...mapState(['tables']),
   },
   methods: {
     ...mapActions(['selectTable', 'sumBill', 'getTotalPaid', 'getMissingPayment', 'registerPayment']),

@@ -1,5 +1,12 @@
 <template>
   <div class="container side-padding">
+    <button @click="removeSelectedTable"
+          class="another-table">
+      Select another table
+    </button>
+    <div>
+      <h2 class="table-title">Selected Table: {{ selectedTable.table }}</h2>
+    </div>
     <div class="values">
       <div class="total">
         <p>Total: <span>{{ selectedTable.total | addMoney}}</span></p>
@@ -57,11 +64,11 @@ export default {
   },
   filters: {
     addMoney(value) {
-      return 'R$' + value + '.00';
+      return `R$${value}.00`;
     },
   },
   methods: {
-    ...mapActions(['registerPayment', 'getTotalPaid', 'sumBill', 'getMissingPayment']),
+    ...mapActions(['registerPayment', 'getTotalPaid', 'sumBill', 'getMissingPayment', 'removeSelectedTable']),
     addPayment() {
       if (this.paying !== null && this.paying !== '') {
         this.registerPayment(this.paying);
@@ -82,6 +89,20 @@ export default {
     padding: 0 20px;
   }
 
+  .another-table{
+    display: block;
+    background: $pink;
+    margin-bottom: 20px;
+    @media screen and (min-width: $desktop-breakpoint){
+      display: none;
+    }
+  }
+
+  .table-title{
+    display: block;
+    margin:  0 0 10px 10px;
+  }
+
   .values{
     display: flex;
     flex-direction: column;
@@ -94,7 +115,7 @@ export default {
         text-align: center;
         margin: 0;
         span{
-          font-weight: 800;
+          font-weight: 900;
         }
       }
     }

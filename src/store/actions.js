@@ -32,10 +32,16 @@ const registerPayment = ({ commit }, value) => {
   commit('updatePayments', number);
 };
 
+const removeSelectedTable = ({ commit }) => {
+  const obj = {};
+  commit('updateSelectedTable', obj);
+};
+
 export default {
   selectTable,
   sumBill,
   getTotalPaid,
   getMissingPayment,
   registerPayment,
+  removeSelectedTable,
 };
