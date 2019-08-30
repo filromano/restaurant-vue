@@ -161,11 +161,16 @@ export default {
   .orders{
     @extend .details-div;
     background: $pink;
-    color: white;
+    li{
+      margin-bottom: 5px;
+    }
   }
 
   .payments{
     @extend .details-div;
     background: $green;
+    li{
+      margin-bottom: 5px;
+    }
   }
 </style>

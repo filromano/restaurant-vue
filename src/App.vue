@@ -63,6 +63,11 @@ export default {
 
   .row{
     display: flex;
+    >div{
+      @media screen and (min-width: $desktop-breakpoint){
+        flex-basis: 50%;
+      }
+    }
   }
 
   .hideMobile{

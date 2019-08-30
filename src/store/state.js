@@ -6,7 +6,11 @@ export default {
       orders: [
         {
           name: 'Chicken',
-          price: 40,
+          price: 20,
+        },
+        {
+          name: 'Petit Gateau',
+          price: 15,
         },
         {
           name: 'Coke',
@@ -20,11 +24,15 @@ export default {
       orders: [
         {
           name: 'Beef',
-          price: 20,
+          price: 40,
         },
         {
           name: 'Guaraná',
           price: 5,
+        },
+        {
+          name: 'Ravioli',
+          price: 40,
         },
       ],
       payments: [],
@@ -33,7 +41,7 @@ export default {
       table: '2',
       orders: [
         {
-          name: 'Beef',
+          name: 'Chicken',
           price: 20,
         },
         {
@@ -47,12 +55,12 @@ export default {
       table: '3',
       orders: [
         {
-          name: 'Beef',
-          price: 20,
+          name: 'Hamburguer',
+          price: 25,
         },
         {
-          name: 'Guaraná',
-          price: 5,
+          name: 'Orange juice',
+          price: 7,
         },
       ],
       payments: [],
@@ -61,15 +69,23 @@ export default {
       table: '4',
       orders: [
         {
-          name: 'Beef',
-          price: 20,
+          name: 'French fries',
+          price: 12,
         },
         {
-          name: 'Guaraná',
+          name: 'Beer',
+          price: 9,
+        },
+        {
+          name: 'Hamburguer',
+          price: 25,
+        },
+        {
+          name: 'Coke',
           price: 5,
         },
       ],
-      payments: [],
+      payments: [12, 2],
     },
     {
       table: '5',
@@ -82,8 +98,20 @@ export default {
           name: 'Guaraná',
           price: 5,
         },
+        {
+          name: 'Beer',
+          price: 9,
+        },
+        {
+          name: 'Hamburguer',
+          price: 25,
+        },
+        {
+          name: 'Coke',
+          price: 5,
+        },
       ],
-      payments: [],
+      payments: [25],
     },
     {
       table: '6',
@@ -95,6 +123,14 @@ export default {
         {
           name: 'Guaraná',
           price: 5,
+        },
+        {
+          name: 'French fries',
+          price: 12,
+        },
+        {
+          name: 'Beer',
+          price: 9,
         },
       ],
       payments: [],
@@ -110,12 +146,28 @@ export default {
           name: 'Guaraná',
           price: 5,
         },
+        {
+          name: 'Petit Gateau',
+          price: 15,
+        },
+        {
+          name: 'Coke',
+          price: 5,
+        },
       ],
-      payments: [],
+      payments: [10],
     },
     {
       table: '8',
       orders: [
+        {
+          name: 'Gnocchi',
+          price: 34,
+        },
+        {
+          name: 'Whisky',
+          price: 32,
+        },
         {
           name: 'Beef',
           price: 20,
@@ -123,6 +175,10 @@ export default {
         {
           name: 'Guaraná',
           price: 5,
+        },
+        {
+          name: 'French fries',
+          price: 12,
         },
       ],
       payments: [],
@@ -138,8 +194,32 @@ export default {
           name: 'Guaraná',
           price: 5,
         },
+        {
+          name: 'Chicken',
+          price: 20,
+        },
+        {
+          name: 'Petit Gateau',
+          price: 15,
+        },
+        {
+          name: 'Coke',
+          price: 5,
+        },
+        {
+          name: 'Beef',
+          price: 20,
+        },
+        {
+          name: 'Guaraná',
+          price: 5,
+        },
+        {
+          name: 'French fries',
+          price: 12,
+        },
       ],
-      payments: [],
+      payments: [20, 34],
     },
   ],
 };
