@@ -142,6 +142,7 @@ export default {
     span{
       width: 100%;
       font-size: 18px;
+      font-weight: 900;
     }
     input{
       display: block;

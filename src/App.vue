@@ -3,7 +3,8 @@
     <h1>Select a table to add payment</h1>
     <div class="row">
       <Tables :class="{ hideMobile : showTable}" />
-      <TableInfo :class="{ hideMobile : !showTable}" />
+      <TableInfo v-if="Object.keys(selectedTable).length !== 0"
+                 :class="{ hideMobile : !showTable}" />
     </div>
   </div>
 </template>
