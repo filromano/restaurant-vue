@@ -22,7 +22,9 @@
       <div class="add-payment">
         <p>
           <span>Add a payment</span>
-          <input type="number" v-model="paying">
+          <input type="number"
+                 v-model="paying"
+                 @keypress="checkIfNumber($event)">
           <button @click="addPayment">Register</button>
         </p>
       </div>
@@ -76,6 +78,14 @@ export default {
         this.sumBill();
         this.getMissingPayment();
         this.paying = '';
+      }
+    },
+    checkIfNumber(evt) {
+      const charCode = (evt.which) ? evt.which : evt.keyCode;
+      if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+        evt.preventDefault();
+      } else {
+        return true;
       }
     },
   },
