@@ -118,6 +118,7 @@ export default {
     max-width: 300px;
     background: $pink;
     margin-bottom: 20px;
+    color: white;
   }
 
   .table-title{
@@ -188,6 +189,7 @@ export default {
       background: $purple;
       padding: 10px 20px;
       font-size: 18px;
+      color: white;
     }
   }
 
