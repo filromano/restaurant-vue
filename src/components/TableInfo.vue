@@ -1,13 +1,13 @@
 <template>
   <div class="container side-padding">
-    <button @click="removeSelectedTable"
-          class="another-table">
-      Select another table
-    </button>
-    <div>
-      <h2 class="table-title">Selected Table: {{ selectedTable.table }}</h2>
-    </div>
     <div class="values">
+      <div>
+        <h2 class="table-title">Selected Table: {{ selectedTable.table }}</h2>
+      </div>
+      <button @click="removeSelectedTable"
+          class="another-table">
+        Select another table
+      </button>
       <div class="total">
         <p>Total: <span>{{ selectedTable.total | addMoney}}</span></p>
       </div>
@@ -97,26 +97,30 @@ export default {
 
   .side-padding {
     padding: 0 20px;
+    >div{
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
   }
 
   .another-table{
     display: block;
+    max-width: 300px;
     background: $pink;
     margin-bottom: 20px;
-    @media screen and (min-width: $desktop-breakpoint){
-      display: none;
-    }
   }
 
   .table-title{
     display: block;
     margin:  0 0 10px 10px;
+    color: black;
   }
 
   .values{
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: white;
     div{
       padding: 20px;
       margin-bottom: 10px;
@@ -129,6 +133,9 @@ export default {
         }
       }
     }
+    @media screen and (min-width: $desktop-breakpoint) {
+      width: 50%;
+    }
   }
   .total{
     background: $purple;
@@ -138,12 +145,18 @@ export default {
   }
   .missing-payment{
     background: $lightpink;
+    span{
+      color: black;
+    }
   }
 
   .details{
     display: flex;
     flex-direction: column;
     width: 100%;
+    @media screen and (min-width: $desktop-breakpoint) {
+      width: 50%;
+    }
   }
 
   .add-payment{

@@ -2,9 +2,9 @@
   <div id="app">
     <h1>Select a table to add payment</h1>
     <div class="row">
-      <Tables :class="{ hideMobile : showTable}" />
+      <Tables :class="{ hide : showTable}" />
       <TableInfo v-if="Object.keys(selectedTable).length !== 0"
-                 :class="{ hideMobile : !showTable}" />
+                 :class="{ hide : !showTable}" />
     </div>
   </div>
 </template>
@@ -64,16 +64,11 @@ export default {
   .row{
     display: flex;
     >div{
-      @media screen and (min-width: $desktop-breakpoint){
-        flex-basis: 50%;
-      }
+      width: 100%;
     }
   }
 
-  .hideMobile{
+  .hide{
     display: none;
-    @media screen and (min-width: $desktop-breakpoint){
-    display: block;
-  }
   }
 </style>
