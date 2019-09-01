@@ -26,6 +26,10 @@
                  v-model="paying"
                  @keypress="checkIfNumber($event)">
           <button @click="addPayment">Register</button>
+          <span class="error"
+                v-if="showError">
+            You are trying to register a number bigger than missing payment
+          </span>
         </p>
       </div>
       <div class="orders">
@@ -59,6 +63,7 @@ export default {
   data() {
     return {
       paying: null,
+      showError: false,
     };
   },
   computed: {
@@ -73,11 +78,16 @@ export default {
     ...mapActions(['registerPayment', 'getTotalPaid', 'sumBill', 'getMissingPayment', 'removeSelectedTable']),
     addPayment() {
       if (this.paying !== null && this.paying !== '') {
-        this.registerPayment(this.paying);
-        this.getTotalPaid();
-        this.sumBill();
-        this.getMissingPayment();
-        this.paying = '';
+        if(this.selectedTable.missingPayment < this.paying){
+          this.showError = true;
+        } else {
+          this.registerPayment(this.paying);
+          this.getTotalPaid();
+          this.sumBill();
+          this.getMissingPayment();
+          this.paying = '';
+          this.showError = false;
+        }
       }
     },
     checkIfNumber(evt) {

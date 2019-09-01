@@ -35,6 +35,12 @@ $desktop-breakpoint: 1080px;
     }
 }
 
+.error{
+  display: block;
+  color:red;
+  padding-top: 10px;
+}
+
 // remove arrow on input field
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
